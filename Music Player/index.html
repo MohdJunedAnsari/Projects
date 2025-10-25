@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🎵 Music Player</h1>
+<div class="player">
+    <p id="song-name">No song selected</p>
+    <audio id="audio" controls>
+        <source id="audio-source" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br>
+    <input type="file" id="file-input" accept="audio/*">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Offline Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Offline Music Player</h1>
+      <div class="controls-top">
+        <label class="file-btn">
+          📁 Add songs
+          <input id="fileInput" type="file" accept="audio/*" multiple />
+        </label>
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="player-card">
+        <div class="now">
+          <div class="meta">
+            <div id="trackTitle">No track loaded</div>
+            <div id="trackArtist" class="muted">—</div>
+          </div>
+
+          <canvas id="visualizer" width="640" height="80"></canvas>
+
+          <div class="play-controls">
+            <button id="prevBtn" title="Previous">⏮</button>
+            <button id="playBtn" title="Play">▶️</button>
+            <button id="nextBtn" title="Next">⏭</button>
+
+            <div class="time">
+              <span id="curTime">0:00</span>
+              <input id="seek" type="range" min="0" max="100" value="0">
+              <span id="durTime">0:00</span>
+            </div>
+
+            <div class="extras">
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="1" title="Volume">
+              <button id="shuffleBtn" title="Shuffle">🔀</button>
+              <button id="repeatBtn" title="Repeat">🔁</button>
+            </div>
+          </div>
+        </div>
+
+        <audio id="audio"></audio>
+      </section>
+
+      <aside class="playlist">
+        <h3>Playlist</h3>
+        <ul id="playlistList"></ul>
+        <div class="playlist-actions">
+          <button id="clearPlaylist">Clear</button>
+          <button id="saveMeta">Save playlist metadata</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <small>Offline-only — files are played from your device. The browser cannot re-open files after a page reload unless you re-select them (see notes below).</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#7c3aed; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --btn:#121827; --btn-hover:#1f2a44;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg),#081221); color:#e6eef8; display:flex; align-items:center; justify-content:center; padding:32px;
+    }
+
+    .calc{
+      width:360px; max-width:95vw; background:linear-gradient(180deg,var(--card), #071026); border-radius:18px; box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+      padding:18px; display:grid; grid-template-rows:auto 1fr; gap:12px;
+    }
+
+    .display{
+      background:var(--glass); border-radius:12px; padding:12px; min-height:76px; display:flex; flex-direction:column; justify-content:center; gap:6px;
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.02);
+    }
+    .secondary{
+      color:var(--muted); font-size:13px; text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    }
+    .primary{
+      font-size:28px; font-weight:600; text-align:right; word-wrap:break-word; overflow:auto;
+    }
+
+    .pad{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+    button{
+      border:0; padding:14px; border-radius:10px; font-size:18px; cursor:pointer; background:var(--btn); color:inherit; box-shadow: 0 4px 10px rgba(2,6,23,0.6);
+      transition: transform .05s ease, background .12s ease;
+    }
+    button:active{transform:translateY(1px)}
+    .op{background:linear-gradient(180deg,var(--btn-hover),var(--btn));}
+    .accent{background:linear-gradient(180deg,var(--accent),#5b21b6);}
+    .wide{grid-column: span 2}
+
+    .footer{display:flex; justify-content:space-between; gap:8px; align-items:center; font-size:13px; color:var(--muted)}
+    .history{font-size:13px; color:var(--muted); max-height:80px; overflow:auto; margin-top:6px}
+
+    /* responsive tweaks */
+    @media (max-width:420px){ .primary{font-size:22px} button{padding:12px; font-size:16px} }
+
+ 
